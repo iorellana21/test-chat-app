@@ -1,7 +1,7 @@
 import React from 'react'
-import { useConversations } from '../contexts/ConversationsProvider'
-import OpenConversation from '../Conversations/OpenConversation'
 import Sidebar from '../Sidebar/Sidebar'
+import OpenConversation from '../Conversations/OpenConversation'
+import { useConversations } from '../contexts/ConversationsProvider'
 
 export default function Dashboard({ id }) {
 

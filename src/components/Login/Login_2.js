@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 // import { v4 as uuidV4 } from 'uuid'
 import randomUsername from 'random-username-generator'
 
-// import './login.css'
+import './login.css'
 
 export default function Login({ onIdSubmit }) {
 
