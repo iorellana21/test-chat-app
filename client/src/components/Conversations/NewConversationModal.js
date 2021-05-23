@@ -17,7 +17,9 @@ export default function NewConversationModal({ closeModal }) {
         createConversation(selectedFriendIds)
         closeModal()
     }
-
+    function closeModal(){
+        return true;
+    }
     function handleCheckboxChange(friendId) {
         setSelectedFriendIds(prevSelectedFriendIds => {
             if (prevSelectedFriendIds.includes(friendId)) {
