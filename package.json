@@ -2,11 +2,11 @@
   "name": "test-chat-app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server",
-    "dev":  "nodemon sever && cd client && npm run start", 
+    "dev": "nodemon server && cd client && yarn start",
     "seed": "node scripts/seed.js"
   },
   "repository": {

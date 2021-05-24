@@ -1,0 +1,50 @@
+.form-control:focus {
+    box-shadow: none;
+  }
+  
+  .form-control-underlined {
+    border-width: 0;
+    border-bottom-width: 1px;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  .form-control::placeholder {
+    font-size: 0.95rem;
+    color: #aaa;
+    font-style: italic;
+  }
+  .search-button {
+      max-width: 100px;
+
+  }
+
+  .has-search {
+    .form-control-feedback {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      width: 1.7rem;
+      height: 1.7rem;
+      line-height: 2.375rem;
+      text-align: center;
+      pointer-events: none;
+      color: #aaa;
+      padding-top: 10px;
+      padding-left: 6px;
+   }
+   .form-control {
+    padding-left: 2.375rem;
+}
+  }
+
+.searchbar {
+  min-width: 412px;
+  margin: 0px;
+  position: relative;
+  left: 0px;
+}
+
+.searchform {
+  margin-top: 1.3em;
+}
