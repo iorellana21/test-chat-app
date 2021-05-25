@@ -13,8 +13,6 @@ import { ConversationsProvider } from './contexts/ConversationsProvider'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
-
-
 export default function App_2() {
 
     const [id, setId] = useLocalStorage('username')

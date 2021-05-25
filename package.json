@@ -1,5 +1,5 @@
 {
-  "name": "mern",
+  "name": "test-chat-app",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -29,6 +29,8 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "mongodb": "^3.6.8",
+    "socket.io": "^4.1.2"
   }
 }

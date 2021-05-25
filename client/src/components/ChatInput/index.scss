@@ -1,0 +1,58 @@
+#msgWindow {
+    margin-top: 20px;
+  }
+  #msgs {
+    margin: 0px 25px;
+    min-height: 500px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+  $msg-border: 1px solid silver;
+  .msg {
+    margin: 5px 0;
+    border: $msg-border;
+    padding: 3px 7px;
+    display: inline-block;
+    position: relative;
+    border-radius: 10px;
+    &::before, &::after {
+      content: ''; display: inline-block; bottom: 0;
+      position: absolute; border: $msg-border;
+    }
+    &::before {
+      right: -20px;
+      width: 15px; height: 15px;
+      border-radius: 10px;
+    }
+    &::after {
+      right: -35px;
+      width: 10px; height: 10px;
+      border-radius: 5px;
+    }
+    &.from {
+      align-self: flex-end;
+    }
+    &.to {
+      align-self: flex-start;
+      &::before {
+        right: inherit;
+        left: -20px;
+      }
+      &::after {
+        right: inherit;
+        left: -35px;
+      }
+    }
+    &.typing {
+      color: red;
+    }
+  }
+  #msgForm {
+    input,button {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
