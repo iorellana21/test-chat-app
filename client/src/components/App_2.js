@@ -1,5 +1,10 @@
 import React from 'react'
 import Login_2 from '../components/Login/Login_2'
+
+import SignUp from './Signup/SignUp'
+import Username from './Username/Username'
+
+
 import useLocalStorage from '../hooks/useLocalStorage'
 import Dashboard from './Dashboard/Dashboard'
 import { FriendsProvider } from './contexts/FriendsProvider'
@@ -39,10 +44,17 @@ export default function App_2() {
         id ? dashboard :
             <Router>
                 <div>
-                    {id ? dashboard : <Login_2 onIdSubmit={setId} />}
+                    {/* {id ? dashboard : <Login_2 onIdSubmit={setId} />} */}
                     <Switch>
                         <Route exact path="/">
                             <Login_2 onIdSubmit={setId} />
+                        </Route>
+                        <Route exact path="/username">
+                            <Username />
+                        </Route>
+
+                        <Route exact path="/signup">
+                            <SignUp />
                         </Route>
                     </Switch>
                 </div>
