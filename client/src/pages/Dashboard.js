@@ -1,10 +1,15 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef} from "react";
+import { Link, useLocation } from 'react-router-dom';
+import socketIOClient from "socket.io-client";
 import SearchBar from '../components/Searchbar';
 import Friendlist from '../components/Friendlist';
 import ChatInput from '../components/ChatInput';
-import { Link, useLocation } from 'react-router-dom';
 import './dashboard.css';
+const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
+const SOCKET_SERVER_URL = "http://localhost:4000";
+
+
 
 /**
   * step 2 use useEffect to set state with that friends array when the component loads
@@ -17,6 +22,9 @@ import './dashboard.css';
 
 export default function Dashboard() {
   const [friendList, setFriendList] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const socketRef = useRef();
+  
   useEffect(()=> {
     async function getFriendList() {
       const request = await fetch('http://localhost:3001/api/friend').then(data => data.json());
@@ -27,8 +35,24 @@ export default function Dashboard() {
       getFriendList();
     }
 
+    socketRef.current = socketIOClient(SOCKET_SERVER_URL, {
+      query: { id:1 },
+    });
+    socketRef.current.on(NEW_CHAT_MESSAGE_EVENT, (message) => {
+      const incomingMessage = {
+        ...message,
+        ownedByCurrentUser: message.senderId === socketRef.current.id,
+      };
+      setMessages((messages) => [...messages, incomingMessage]);
+    });
+    return () => {
+      socketRef.current.disconnect();
+    };
+
+
   }, [])
   const location = useLocation();
+  
   console.log(friendList);
 
   return (
