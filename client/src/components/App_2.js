@@ -48,7 +48,7 @@ export default function App_2() {
                             <Login_2 onIdSubmit={setId} />
                         </Route>
                         <Route exact path="/username">
-                            <Username />
+                            <Username onIdSubmit={setId}/>
                         </Route>
 
                         <Route exact path="/signup">

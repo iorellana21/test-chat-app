@@ -28,16 +28,6 @@ export default function Login({ onIdSubmit }) {
 
     return (
         <Container className="align-items-center login-bg d-flex" style={{ height: '100vh' }}>
-            <Form onSubmit={handleSubmit} className="w-100">
-
-                <Form.Group>
-                    <Form.Label>Enter your ID</Form.Label>
-                    <Form.Control type="text" ref={idRef} />
-                </Form.Group>
-
-                <Button type="submit" className="mr-2">Login</Button>
-                <Button onClick={createNewId} variant="secondary">Create Username</Button>
-            </Form>
 
             {/* OUR STUFF */}
             <div className="col-6 mx-auto my-auto">

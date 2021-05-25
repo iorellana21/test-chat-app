@@ -38,7 +38,7 @@ export default function NewConversationModal({ closeModal }) {
                 <Modal.Title>Create Conversation </Modal.Title>
             </Modal.Header>
 
-            <Modal.Body>
+            <Modal.Body >
                 <Form onSubmit={handleSubmit}>
                     {friends.map(friend => (
                         <Form.Group controlId={friend.id} key={friend.id}>

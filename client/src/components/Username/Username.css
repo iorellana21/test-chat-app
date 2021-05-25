@@ -1,6 +1,17 @@
-.Username-bg {
+/* .Username-bg {
     background-color: #000;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
+} */
+
+.login-bg {
+    background-color: #000;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+h2, label {
+    color: white;
 }

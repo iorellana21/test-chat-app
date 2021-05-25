@@ -24,11 +24,11 @@ export default function NewFriendModal({ closeModal }) {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
-                        <Form.Label>Username</Form.Label>
+                        <Form.Label style={{color: 'black'}}>Email</Form.Label>
                         <Form.Control type="text" ref={idRef} required />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Label>Friend Name</Form.Label>
+                        <Form.Label style={{ color: 'black' }}>Name</Form.Label>
                         <Form.Control type="text" ref={nameRef} required />
                     </Form.Group>
 
