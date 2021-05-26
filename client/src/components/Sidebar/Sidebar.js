@@ -9,7 +9,7 @@ const CONVERSATIONS_KEY = 'conversations'
 const FRIENDS_KEY = 'friends'
 
 
-export default function Sidebar({ id }) {
+export default function Sidebar({ username }) {
 
     const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
     const conversationsOpen = activeKey === CONVERSATIONS_KEY
@@ -42,7 +42,7 @@ export default function Sidebar({ id }) {
                 </Tab.Content>
 
                 <div className="p-2 border-top border-right small">
-                    Your Username: <span className="text-muted">{id}</span>
+                    Your Username: <span className="text-muted">{username}</span>
                 </div>
 
                 <Button onClick={() => setModalOpen(true)} className="rounded-0">

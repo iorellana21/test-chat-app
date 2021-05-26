@@ -18,12 +18,12 @@ export default function Username({ onIdSubmit }) {
     function handleSubmit(e) {
         e.preventDefault();
 
-        onIdSubmit(idRef.current.value)
+        onIdSubmit({ username: idRef.current.value })
 
     }
 
     function createNewId() {
-        onIdSubmit(randomName.generate())
+        onIdSubmit({ username: randomName.generate()})
     }
 
     return (
@@ -35,8 +35,8 @@ export default function Username({ onIdSubmit }) {
                     <Form.Control type="text" ref={idRef} />
                 </Form.Group>
 
-                <Button type="submit" className="mr-2">Login</Button>
-                <Button onClick={createNewId} variant="secondary">Create Username</Button>
+                <Button type="submit">Create Username</Button>
+                <Button onClick={createNewId} variant="secondary">Generate Username</Button>
             </Form>
 
 

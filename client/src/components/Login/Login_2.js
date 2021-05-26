@@ -40,7 +40,7 @@ export default function Login({ onIdSubmit }) {
                     <form onSubmit={handleSubmit}>
                         {/* EMAIL */}
                         <div className="form-group">
-                            <label>Email </label>
+                            <label>Emailsss </label>
                             <input type="email" className="form-control" />
                             <small className="email-help-text form-text text-muted">
                                 We'll never share your email with anyone else.
