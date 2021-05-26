@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const roomSchema = new Schema ({
     name: { type: String, required: true, lowercase: true},
     topic: { type: String, required: true, lowercase: true},
-    users:[{
+    user:[{
         type: Schema.Types.ObjectId,
         ref: 'User',
     }],
