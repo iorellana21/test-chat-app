@@ -51,20 +51,35 @@ export function ConversationsProvider({ id, children }) {
 
     const formattedConversations = conversations.map((conversation, index) => {
         const recipients = conversation.recipients.map(recipient => {
-            const friend = friends.find(friend => {
-                return friend.id === recipient
-            })
-            const name = (friend && friend.name) || recipient
-            return { id: recipient, name }
+            // const friend = friends.find(friend => {
+            //     return friend.id === recipient
+            // })
+            // const name = (friend && friend.name) || recipient
+            // return { id: recipient, name }
+            if (friends.length > 0) {
+                const friend = friends.find(friend => {
+                    return friend.id === recipient;
+                });
+                const name = (friend && friend.name) || recipient
+                return { id: recipient, name }
+            }
         })
 
         const messages = conversation.messages.map(message => {
-            const friend = friends.find(friend => {
-                return friend.id === message.sender
-            })
-            const name = (friend && friend.name) || message.sender
-            const fromMe = id === message.sender
-            return{...message, senderName: name, fromMe}
+            // const friend = friends.find(friend => {
+            //     return friend.id === message.sender
+            // })
+            // const name = (friend && friend.name) || message.sender
+            // const fromMe = id === message.sender
+            // return{...message, senderName: name, fromMe}
+            if (friends.length > 0) {
+                const friend = friends.find(friend => {
+                    return friend.id === message.sender;
+                });
+                const name = (friend && friend.name) || message.sender;
+                const fromMe = id === message.sender;
+                return { ...message, senderName: name, fromMe }
+            }
         })
 
         const selected = index === selectedConversationIndex

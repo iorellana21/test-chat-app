@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Modal, Form, Button } from 'react-bootstrap'
 import { useFriends } from '../contexts/FriendsProvider'
 
-export default function NewFriendModal({ closeModal }) {
+export default function NewFriendModal({ id, closeModal }) {
 
     const idRef = useRef()
     const nameRef = useRef()
@@ -11,7 +11,8 @@ export default function NewFriendModal({ closeModal }) {
     function handleSubmit(e) {
         e.preventDefault()
 
-        createFriend(idRef.current.value, nameRef.current.value)
+        createFriend({ userId: id, name: idRef.current.value })
+        console.log(id, idRef.current.value)
         closeModal()
     }
 
@@ -24,13 +25,13 @@ export default function NewFriendModal({ closeModal }) {
             <Modal.Body>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group>
-                        <Form.Label style={{color: 'black'}}>Email</Form.Label>
+                        <Form.Label style={{color: 'black'}}>Name</Form.Label>
                         <Form.Control type="text" ref={idRef} required />
                     </Form.Group>
-                    <Form.Group>
+                    {/* <Form.Group>
                         <Form.Label style={{ color: 'black' }}>Name</Form.Label>
                         <Form.Control type="text" ref={nameRef} required />
-                    </Form.Group>
+                    </Form.Group> */}
 
                     <Button type="submit"> Create New Friend</Button>
                 </Form>

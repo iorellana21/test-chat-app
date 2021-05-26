@@ -9,7 +9,7 @@ const CONVERSATIONS_KEY = 'conversations'
 const FRIENDS_KEY = 'friends'
 
 
-export default function Sidebar({ username }) {
+export default function Sidebar({ username, id }) {
 
     const [activeKey, setActiveKey] = useState(CONVERSATIONS_KEY)
     const conversationsOpen = activeKey === CONVERSATIONS_KEY
@@ -53,7 +53,7 @@ export default function Sidebar({ username }) {
             <Modal show={modalOpen} onHide={closeModal}>
                 {conversationsOpen ?
                     <NewConversationModal closeModal={closeModal} /> :
-                    <NewFriendModal closeModal={closeModal} />
+                    <NewFriendModal closeModal={closeModal} id={id}/>
                 }
             </Modal>
 

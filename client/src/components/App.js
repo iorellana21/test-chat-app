@@ -24,7 +24,7 @@ export default function App() {
         <FriendsProvider>
 
             <ConversationsProvider id={value._id}>
-                <Dashboard username={value.username} />
+                <Dashboard username={value.username} id={value._id}/>
             </ConversationsProvider>
 
         </FriendsProvider>
