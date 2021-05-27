@@ -1,5 +1,13 @@
 # Project3
 messaging app
+
+## TO DO - from Peter
+* modify FriendProvider to trigger a GET request for friends based on userID on page load - hint: useEffect
+
+* put the conversation data into the DB
+    * create new Conversation file in /models
+    * save data along with userId and 1 friendId - no group chats right now
+---
 ## Work done so far:
 * Created pages 
     * Landing page (sign in or sign up)

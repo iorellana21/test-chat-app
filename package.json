@@ -4,27 +4,33 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server",
-    "dev": "nodemon server && cd client && yarn start",
-    "seed": "node scripts/seed.js"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iorellana21/test-chat-app.git"
-  },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iorellana21/test-chat-app/issues"
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.7"
   },
-  "homepage": "https://github.com/iorellana21/test-chat-app#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1",
+    "express": "^4.16.3",
+    "express-session": "^1.17.1",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.3.16",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "mongodb": "^3.6.8",
-    "mongoose": "^5.12.10"
+    "socket.io": "^4.1.2"
   }
 }
