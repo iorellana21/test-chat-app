@@ -5,6 +5,10 @@
     min-height: 100vh;
 } */
 
+body {
+    background-color: black;
+}
+
 .login-bg {
     background-color: #000;
     flex-direction: column;
