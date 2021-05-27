@@ -1,10 +1,10 @@
-import {createContext} from 'react';
+import { createContext } from 'react';
 
 const UserContext = createContext({
     email: "",
-    setEmail: () => {},
+    setEmail: () => { },
     loggedIn: false,
-    setLoggedIn: () => {}
+    setLoggedIn: () => { }
 });
 
 export default UserContext;
