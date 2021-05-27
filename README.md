@@ -36,10 +36,6 @@ messaging app
 * We need to run 2 terminals. One for server(backend with [node/nodemon] server) and the other for UI (front end/react with [yarn_start]) {malcolm}
     * friends list now shows dummy data and is ready on back end, needs front end functionality
 
-socket.io documentation
-capture email instead of unique id
-select multiple users to chat in group (checkbox)
-
 * updated new file [HandleChat.js] in src folder, in client foler
     * exported into chatinput
 * fixed const issues in room and message js files within [models]
