@@ -28,6 +28,11 @@ messaging app
 * We need to run 2 terminals. One for server(backend with [node/nodemon] server) and the other for UI (front end/react with [yarn_start]) {malcolm}
     * friends list now shows dummy data and is ready on back end, needs front end functionality
 
-socket.io documentation
-capture email instead of unique id
-select multiple users to chat in group (checkbox)
+* added config folder with files
+* adding [express-session], [axios]
+* added [16-18,25-31]
+* updated index.js in [routes->api->index.js]
+* updated [index.js] models folder 
+
+trying to add passport and authorize to access route based on creds
+in user.js

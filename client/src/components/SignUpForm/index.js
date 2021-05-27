@@ -1,25 +1,28 @@
 import React, { Fragment, useContext, useRef } from 'react';
-// import "./style.scss";
 import API from '../../utils/API';
 import UserContext from '../../utils/UserContext';
+import { useHistory } from "react-router-dom";
 import { Link, useLocation } from 'react-router-dom';
 
 function SignUpForm(props) {
     const { email, setEmail, loggedIn, setLoggedIn } = useContext(UserContext);
     const emailInput = useRef();
     const passwordInput = useRef();
-    // let extraProps = {}
-    // if (props.className) {
-    //     extraProps.className = props.className;
-    // }
+    const history = useHistory();
+
+    let extraProps = {}
+    if (props.className) {
+        extraProps.className = props.className;
+    }
+
     let emailId = props.className ? props.className + "-signup-email" : "signup-email";
     let emailHelpId = props.className ? props.className + "-signup-email-help" : "signup-email-help";
     let passwordId = props.className ? props.className + "-signup-password" : "signup-password";
     const handleSubmit = event => {
         // if the user hits enter or hits the button, this function will fire
         event.preventDefault();
-        // console.log("submit happened");
-        // console.log({ email: emailInput.current.value, password: passwordInput.current.value});
+        console.log("submit happened");
+        console.log({ email: emailInput.current.value, password: passwordInput.current.value});
         // API.testUserRouter()
         // .then(data => {
         //     console.log(data);
@@ -32,12 +35,15 @@ function SignUpForm(props) {
                 // console.log(data);
                 setEmail(data.data.email);
                 setLoggedIn(true);
+                history.push("/new-user");
+
             })
             .catch(err => {
                 console.log(err);
             });
     }
     const location = useLocation();
+
     return (
         <Fragment>
             { (() => {
@@ -64,7 +70,7 @@ function SignUpForm(props) {
                             >Sign Up!
                         </Link>
 
-                        {/* <button type="submit" className="btn btn-primary">Sign Up</button> */}
+                        <button type="submit" className="btn btn-primary">Sign Up</button>
                     </form>
 
                     );

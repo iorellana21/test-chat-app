@@ -13,12 +13,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const SOCKET_IO_PORT = 4000;
 
+// Requiring passport as we've configured it
+const session = require("express-session");
+const passport = require("./config/passport");
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
-//
+
+// We need to use sessions to keep track of our user's login status
+app.use(
+  session({ secret: "the secret that always changes", resave: true, saveUninitialized: true })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
 // setting up socket.io 
 const NEW_CHAT_MESSAGE_EVENT = "newChatMessage";
 io.on("connection", (socket) => {
@@ -47,7 +57,10 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true });
+// mongoose.connect(process.env.MONGODB_URI, { useUnifiedTopology: true });
+
+// Testing on local host first
+mongoose.connect("mongodb://localhost/proj3");
 
 // Start the API server
 app.listen(PORT, function() {
