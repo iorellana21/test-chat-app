@@ -1,5 +1,6 @@
 # Project3
 messaging app
+
 ## Work done so far:
 * Created pages 
     * Landing page (sign in or sign up)
@@ -31,3 +32,6 @@ messaging app
 socket.io documentation
 capture email instead of unique id
 select multiple users to chat in group (checkbox)
+
+* updated new file [HandleChat.js] in src folder, in client foler
+    * exported into chatinput
