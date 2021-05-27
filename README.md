@@ -42,3 +42,5 @@ select multiple users to chat in group (checkbox)
 
 * updated new file [HandleChat.js] in src folder, in client foler
     * exported into chatinput
+
+* fixed const issues in room and message js files within [models]
