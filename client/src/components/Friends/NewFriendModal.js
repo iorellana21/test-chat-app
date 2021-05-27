@@ -28,11 +28,6 @@ export default function NewFriendModal({ id, closeModal }) {
                         <Form.Label style={{color: 'black'}}>Name</Form.Label>
                         <Form.Control type="text" ref={idRef} required />
                     </Form.Group>
-                    {/* <Form.Group>
-                        <Form.Label style={{ color: 'black' }}>Name</Form.Label>
-                        <Form.Control type="text" ref={nameRef} required />
-                    </Form.Group> */}
-
                     <Button type="submit"> Create New Friend</Button>
                 </Form>
             </Modal.Body>

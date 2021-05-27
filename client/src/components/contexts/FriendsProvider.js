@@ -1,30 +1,3 @@
-// import React, { useContext } from 'react'
-// import useLocalStorage from '../../hooks/useLocalStorage'
-
-// const FriendsContext = React.createContext()
-
-// export function useFriends(){
-//     return useContext(FriendsContext)
-// }
-
-// export function FriendsProvider({ children }) {
-
-//     const [friends, setFriends] = useLocalStorage('friends', [])
-
-//     function createFriend(id, name) {
-//         setFriends(prevFriends => {
-//             return [...prevFriends, { id, name }]
-//         })
-//     }
-
-//     console.log("***", friends)
-//     return (
-//         <FriendsContext.Provider value={{ friends, createFriend }}>
-//             {children}
-//         </FriendsContext.Provider>
-//     )
-// }
-
 import React, { useContext } from 'react'
 import useFriendDBstorage from '../../hooks/useFriendDBstorage'
 
@@ -36,21 +9,26 @@ export function useFriends() {
 
 export function FriendsProvider({ children }) {
 
-    const [friends, setFriends] = useFriendDBstorage('friends', [])
+    const [friends, setFriends, getFriends] = useFriendDBstorage('friends', [])
 
     function createFriend(friend) {
-        // setFriends(prevFriends => {
-        //     return [...prevFriends, { id, name }]
-        // })
         console.log(friend);
         setFriends(friend)
     }
 
+    // async function getFriends(username) {
+    //     const url = `http://localhost:3001/api/user/get-friends/${username.username}`;
+    //     const request = await fetch(url).then(data => data.json());
+    //     setFriends(request);
+    //     console.log(request);
+    // }
+
     console.log("friends and providers!", friends)
     return (
-        <FriendsContext.Provider value={{ friends, createFriend }}>
+        <FriendsContext.Provider value={{ friends, createFriend, getFriends }}>
             {children}
         </FriendsContext.Provider>
     )
+
 }
 

@@ -1,6 +1,5 @@
 import React from 'react'
 import Login_2 from './Login/Login_2'
-
 import SignUp from './Signup/SignUp'
 import Username from './Username/Username'
 import SignIn from './SignIn/SignIn'
@@ -15,7 +14,6 @@ import { FriendsProvider } from './contexts/FriendsProvider'
 import { ConversationsProvider } from './contexts/ConversationsProvider'
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
 
 export default function App() {
 
@@ -34,21 +32,10 @@ export default function App() {
     )
 
     return (
-        // <Router>
-        //  <div>
-        //      {id ? dashboard : <Login_2 onIdSubmit={setId} />}
-        //      <Switch>
-        //         <Route exact path="/">
-        //             <Login_2 onIdSubmit={setId}/>
-        //         </Route>
-        //     </Switch>
-        //   </div>
-        // </Router>
 
         value._id || username.length > 0 ? dashboard :
             <Router>
                 <div>
-                    {/* {id ? dashboard : <Login_2 onIdSubmit={setId} />} */}
                     <Switch>
                         <Route exact path="/">
                             <Username onIdSubmit={saveUsername} />
@@ -56,12 +43,6 @@ export default function App() {
                         <Route exact path="/signin">
                             <SignIn getUserByName={getUserByName} />
                         </Route>
-                        {/* <Route exact path="/username">
-                            <Username onIdSubmit={saveUsername}/>
-                        </Route> */}
-                        {/* <Route exact path="/signup">
-                            <SignUp />
-                        </Route> */}
                     </Switch>
                 </div>
             </Router>

@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import HandleChat from '../../HandleChat';
 import './index.scss';
 export default function ChatInput() {
+
   const location = useLocation();
   const { messages, sendMessage } = HandleChat("current-room");
   const [newMessage, setNewMessage] = useState("");
@@ -14,7 +15,9 @@ export default function ChatInput() {
     sendMessage(newMessage);
     setNewMessage("");
   };
+  
   console.log(messages);
+
   return (
     <div className="container">
       <div className="row">
