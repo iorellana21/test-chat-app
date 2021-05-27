@@ -31,7 +31,7 @@ export default function Username({ onIdSubmit }) {
             <Form onSubmit={handleSubmit} className="w-100">
 
                 <Form.Group>
-                    <Form.Label>Enter a username</Form.Label>
+                    <Form.Label style={{color:"white"}}>Enter a username</Form.Label>
                     <Form.Control type="text" ref={idRef} />
                 </Form.Group>
 
