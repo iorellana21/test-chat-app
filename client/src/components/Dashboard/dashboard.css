@@ -1,0 +1,14 @@
+body {
+    background-color: #000;
+}
+
+.dashboard-bg{
+    background-color: #000;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.chat-box {
+    float: right;
+}

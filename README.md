@@ -13,7 +13,7 @@ messaging app
 * put the conversation data into the DB
     * create new Conversation file in /models
     * save data along with userId and 1 friendId - no group chats right now
----
+
 ## Work done so far:
 * Created pages 
     * Landing page (sign in or sign up)
@@ -53,4 +53,3 @@ messaging app
 * list items in new conversation are visible
 * we need to connect sign in page with username page (somehow)
 * we used the username below to test friends list consistently
-    * Blithesome-pip-36

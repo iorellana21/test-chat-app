@@ -1,0 +1,10 @@
+body {
+    background-color: black;
+}
+
+.signUp-bg {
+    background-color: black;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
