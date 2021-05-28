@@ -8,7 +8,7 @@ export default function useDBstorage(username, initialValue) {
 
     async function saveUsername(username) {
         console.log(username)
-        const request = await fetch('http://localhost:3001/api/user/save', {
+        const request = await fetch(process.env.REACT_APP_FETCH_DOMAIN+'/api/user/save', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

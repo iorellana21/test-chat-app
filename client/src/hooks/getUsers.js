@@ -15,7 +15,7 @@ export default function GetUser(name, initialValue) {
         //     },
         // }).then(data => data.json());
         // console.log(request);
-        const request = await fetch(`http://localhost:3001/api/user/user/${name}`).then(data => data.json());
+        const request = await fetch(process.env.REACT_APP_FETCH_DOMAIN + `/api/user/user/${name}`).then(data => data.json());
         console.log(request);
         setValue(request)
     }
