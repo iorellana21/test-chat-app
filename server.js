@@ -44,7 +44,7 @@ io.on("connection", (socket) => {
   // Leave the room if the user closes the socket
   socket.on("disconnect", () => {
     console.log(`Client ${socket.id} diconnected`);
-    socket.leave(roomId);
+    socket.leave(id);
   });
 });
 

@@ -28,10 +28,10 @@ export default function Username({ onIdSubmit }) {
 
     return (
         <Container className="align-items-center login-bg d-flex" style={{ height: '100vh' }}>
+            <h2 style={{ color: "white" }}> Welcome to our Friend chat! (working title lol)</h2>
             <Form onSubmit={handleSubmit} className="w-100">
-
                 <Form.Group>
-                    <Form.Label>Enter a username</Form.Label>
+                    <Form.Label style={{color:"white"}}>Enter a username</Form.Label>
                     <Form.Control type="text" ref={idRef} />
                 </Form.Group>
 

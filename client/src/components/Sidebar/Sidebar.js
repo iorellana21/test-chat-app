@@ -37,7 +37,7 @@ export default function Sidebar({ username, id }) {
                         <Conversations />
                     </Tab.Pane>
                     <Tab.Pane eventKey={FRIENDS_KEY}>
-                        <Friends />
+                        <Friends username={username}/>
                     </Tab.Pane>
                 </Tab.Content>
 
@@ -56,7 +56,6 @@ export default function Sidebar({ username, id }) {
                     <NewFriendModal closeModal={closeModal} id={id}/>
                 }
             </Modal>
-
 
         </div>
     )

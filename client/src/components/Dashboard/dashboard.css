@@ -1,10 +1,14 @@
-.login-bg {
+body {
+    background-color: #000;
+}
+
+.dashboard-bg{
     background-color: #000;
     flex-direction: column;
     justify-content: center;
     min-height: 100vh;
 }
 
-h2, label{
-    color: black;
+.chat-box {
+    float: right;
 }

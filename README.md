@@ -36,6 +36,16 @@ messaging app
 * We need to run 2 terminals. One for server(backend with [node/nodemon] server) and the other for UI (front end/react with [yarn_start]) {malcolm}
     * friends list now shows dummy data and is ready on back end, needs front end functionality
 
-socket.io documentation
-capture email instead of unique id
-select multiple users to chat in group (checkbox)
+* updated new file [HandleChat.js] in src folder, in client foler
+    * exported into chatinput
+* fixed const issues in room and message js files within [models]
+* line 37: commented out 30-50 [src->conversation->openConversation.js]
+* added fucntion to freinds.js class
+
+* We have friends list populating
+* most of our app is running on back end/local server
+* list items in new conversation are visible
+* we need to connect sign in page with username page (somehow)
+* we used the username below to test friends list consistently
+    * Blithesome-pip-36
+

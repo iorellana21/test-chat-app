@@ -41,12 +41,12 @@ export default function NewConversationModal({ closeModal }) {
             <Modal.Body >
                 <Form onSubmit={handleSubmit}>
                     {friends.map(friend => (
-                        <Form.Group controlId={friend.id} key={friend.id}>
+                        <Form.Group controlId={friend._id} key={friend._id}>
                             <Form.Check
                                 type="checkbox"
-                                value={selectedFriendIds.includes(friend.id)}
+                                value={selectedFriendIds.includes(friend._id)}
                                 label={friend.name}
-                                onChange={() => handleCheckboxChange(friend.id)}
+                                onChange={() => handleCheckboxChange(friend._id)}
                             />
                         </Form.Group>
                     ))}
